@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Barbearia Viana - São Paulo SP Zona Sul. Cortes masculinos, barba e muito mais. Agende pelo WhatsApp!">
+<title>Barbearia Viana | São Paulo SP Zona Sul</title>
+<style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --bg-main: #0A0A0A;
+    --bg-alt: #111111;
+    --bg-card: #1A1A1A;
+    --gold: #F59E0B;
+    --gold-light: #FCD34D;
+    --gold-dark: #D97706;
+    --whatsapp: #25D366;
+    --whatsapp-dark: #1DA851;
+    --text-main: #FFFFFF;
+    --text-secondary: #9CA3AF;
+    --border: #2A2A2A;
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 1rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  .header-logo-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .header-logo-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s;
+    display: none;
+  }
+
+  nav a:hover {
+    color: var(--gold);
+  }
+
+  .nav-cta {
+    display: flex !important;
+    background: var(--whatsapp);
+    color: #fff !important;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: background 0.2s, transform 0.2s !important;
+    white-space: nowrap;
+  }
+
+  .nav-cta:hover {
+    background: var(--whatsapp-dark) !important;
+    transform: scale(1.03);
+  }
+
+  @media (min-width: 768px) {
+    nav a {
+      display: block;
+    }
+    .header-logo-text {
+      font-size: 1.25rem;
+    }
+    header {
+      padding: 0 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    header {
+      padding: 0 4rem;
+    }
+  }
+
+  /* ===== HERO ===== */
+  #inicio {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0A0A0A 0%, #111111 40%, #1a1200 70%, #0A0A0A 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 7rem 1.5rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #inicio::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  #inicio::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    color: var(--gold);
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+    letter-spacing: -1px;
+  }
+
+  .hero-title span {
+    color: var(--gold);
+    text-shadow: 0 0 40px rgba(245, 158, 11, 0.4);
+  }
+
+  .hero-city {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-stars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-stars .stars {
+    color: var(--gold);
+    font-size: 1rem;
+  }
+
+  .hero-stars .rating-text {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+  }
+
+  .hero-stars strong {
+    color: var(--gold);
+  }
+
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: linear-gradient(135deg, var(--whatsapp), var(--whatsapp-dark));
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px rgba(37, 211, 102, 0.35);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-whatsapp::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transition: left 0.4s;
+  }
+
+  .btn-whatsapp:hover::before {
+    left: 100%;
+  }
+
+  .btn-whatsapp:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 32px rgba(37, 211, 102, 0.45);
+  }
+
+  .btn-whatsapp:active {
+    transform: translateY(0) scale(0.99);
+  }
+
+  .hero-decoration {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,158,11,0.06), transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-decoration-2 {
+    position: absolute;
+    bottom: 20%;
+    left: 3%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,158,11,0.04), transparent 70%);
+    pointer-events: none;
+  }
+
+  @media (min-width: 480px) {
+    .hero-title {
+      font-size: 3rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hero-title {
+      font-size: 4rem;
+    }
+    .hero-subtitle {
+      font-size: 1.25rem;
+    }
+    .btn-whatsapp {
+      padding: 1.1rem 2.5rem;
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-title {
+      font-size: 4.5rem;
+    }
+  }
+
+  /* ===== SECTION COMMON ===== */
+  section {
+    padding: 4rem 1.5rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title span {
+    color: var(--gold);
+  }
+
+  .section-desc {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    section {
+      padding: 5rem 2rem;
+    }
+    .section-title {
+      font-size: 2.5rem;
+    }
+  }
+
+  /* ===== SERVIÇOS ===== */
+  #servicos {
+    background: var(--bg-alt);
+    position: relative;
+  }
+
+  #servicos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 480px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .services-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    text-align: center;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(245, 158, 11, 0.4);
+    box-shadow: 0 8px 32px rgba(245, 158, 11, 0.1);
+  }
+
+  .service-card:hover::before {
+    opacity: 1;
+  }
+
+  .service-card.featured {
+    border-color: rgba(245, 158, 11, 0.4);
+    background: linear-gradient(135deg, #1A1A1A, #1f1800);
+  }
+
+  .service-card.featured::before {
+    opacity: 1;
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--gold);
+    color: #000;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 0.2rem 0.5rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+    line-height: 1;
+  }
+
+  .service-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+  }
+
+  .service-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+  }
+
+  .service-price {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .service-price sup {
+    font-size: 1rem;
+    font-weight: 700;
+    vertical-align: super;
+  }
+
+  /* ===== AVALIAÇÕES ===== */
+  #avaliacoes {
+    background: var(--bg-main);
+    position: relative;
+  }
+
+  .rating-highlight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .rating-highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .rating-number {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    text-shadow: 0 0 30px rgba(245,158,11,0.3);
+  }
+
+  .rating-stars {
+    font-size: 1.75rem;
+    letter-spacing: 3px;
+  }
+
+  .rating-count {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+
+  .rating-google {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+  }
+
+  .google-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4285F4;
+    display: inline-block;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 600px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .testimonial-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+
+  .testimonial-card:hover {
+    border-color: rgba(245, 158, 11, 0.3);
+    transform: translateY(-3px);
+  }
+
+  .testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #fff;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #F59E0B, #D97706);
+  }
+
+  .testimonial-avatar.blue {
+    background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+  }
+
+  .testimonial-avatar.green {
+    background: linear-gradient(135deg, #10B981, #047857);
+  }
+
+  .testimonial-info {
+    flex: 1;
+  }
+
+  .testimonial-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .testimonial-date {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+  }
+
+  .testimonial-stars {
+    color: var(--gold);
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 1px;
+  }
+
+  .testimonial-text {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .google-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+    font-size: 0.7rem;
+    color: #9CA3AF;
+  }
+
+  /* ===== CONTATO ===== */
+  #contato {
+    background: var(--bg-alt);
+    position: relative;
+  }
+
+  #contato::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 700px) {
+    .contact-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .contact-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .contact-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+
+  .contact-card:hover {
+    border-color: rgba(245, 158, 11, 0.3);
+    transform: translateY(-3px);
+  }
+
+  .contact-icon {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-card-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-info {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .contact-info a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+
+  .contact-info a:hover {
+    color: var(--gold);
+  }
+
+  .hours-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hours-list li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hours-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .hours-list .day {
+    font-weight: 600;
+    color: var(--text-main);
+  }
+
+  .hours-list .time {
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .hours-list .closed {
+    color: #EF4444;
+  }
+
+  .contact-cta {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(135deg, rgba(245,158,11,0.08), rgba(245,158,11,0.03));
+    border: 1px solid rgba(245,158,11,0.2);
+    border-radius: 20px;
+  }
+
+  .contact-cta h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+  }
+
+  .contact-cta p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  /* ===== FLOATING WHATSAPP ===== */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--whatsapp);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.85rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    box-shadow: 0 4px 24px rgba(37, 211, 102, 0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: pulse-green 2.5s infinite;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.06) translateY(-2px);
+    box-shadow: 0 8px 32px rgba(37, 211, 102, 0.6);
+    animation: none;
+  }
+
+  .whatsapp-float-icon {
+    font-size: 1.3rem;
+    line-height: 1;
+  }
+
+  .whatsapp-float-text {
+    display: none;
+  }
+
+  @media (min-width: 480px) {
+    .whatsapp-float-text {
+      display: block;
+    }
+  }
+
+  @keyframes pulse-green {
+    0%, 100% {
+      box-shadow: 0 4px 24px rgba(37, 211, 102, 0.5);
+    }
+    50% {
+      box-shadow: 0 4px 40px rgba(37, 211, 102, 0.7), 0 0 0 8px rgba(37,211,102,0.12);
+    }
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: #050505;
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo-text {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--gold);
+  }
+
+  .footer-divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 1rem auto;
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+
+  .footer-copy span {
+    color: var(--gold);
+  }
+
+  /* ===== SCROLL ANIMATION HELPER ===== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== DECORATIVE LINE ===== */
+  .gold-line {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .gold-line::before,
+  .gold-line::after {
+    content: '';
+    height: 1px;
+    width: 50px;
+    background: linear-gradient(90deg, transparent, var(--gold));
+  }
+
+  .gold-line::after {
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  .gold-line-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(245,158,11,0.6);
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <a href="#inicio" class="header-logo">
+    <span class="header-logo-icon">✂️</span>
+    <span class="header-logo-text">Barbearia Viana</span>
+  </a>
+  <nav>
+    <a href="#servicos">Serviços</a>
+    <a href="#avaliacoes">Avaliações</a>
+    <a href="#contato">Contato</a>
+    <a href="https://wa.me/5511982893976?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="nav-cta" target="_blank" rel="noopener">💬 Agendar</a>
+  </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="inicio">
+  <div class="hero-decoration"></div>
+  <div class="hero-decoration-2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      ✂️ &nbsp;Zona Sul · São Paulo
+    </div>
+    <h1 class="hero-title">
+      Barbearia<br><span>Viana</span>
+    </h1>
+    <p class="hero-city">📍 Chácara Santo Antônio, São Paulo – SP</p>
+    <p class="hero-subtitle">
+      Estilo, precisão e tradição em cada corte.
+    </p>
+    <p class="hero-tagline">Onde o visual masculino encontra a excelência.</p>
+    <div class="hero-stars">
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+      <span class="rating-text"><strong>4.9</strong>/5 · 500+ avaliações no Google</span>
+    </div>
+    <a href="https://wa.me/5511982893976?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="btn-whatsapp" target="_blank" rel="noopener">
+      💬 Agendar pelo WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ===== SERVIÇOS ===== -->
